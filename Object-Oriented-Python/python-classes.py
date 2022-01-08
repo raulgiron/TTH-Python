@@ -24,15 +24,40 @@ print(me.feedback(grade=51))
 
 class RaceCar:
 
-    def __init__(self, color, fuel_remaining, **kwargs):
-        self.laps = 0
+    def __init__(self, color: str, fuel_remaining: int, **kwargs):
+        self.laps: int = 0
         self.color = color
         self.fuel_remaining = fuel_remaining
 
         for key, value in kwargs.items():
             setattr(self, key, value)
 
-    def run_lap(self, length):
+    def run_lap(self, length: int):
         self.laps += 1
         self.fuel_remaining -= length * 0.125
         return self.fuel_remaining
+
+
+tesla = RaceCar(color='Red', fuel_remaining=100)
+print(tesla.run_lap(length=760))
+print(tesla.laps)
+
+
+class Inventory:
+    def __init__(self):
+        self.slots = []
+
+    def add_item(self, item):
+        self.slots.append(item)
+
+
+class SortedInventory(Inventory):
+
+    def add_item(self, *args):
+        super().add_item(args)
+        self.slots.sort()
+
+
+supermarket = SortedInventory()
+supermarket.add_item('Toronja', 'Guineo', 'Aguacate', 'Zapote', 'Banana')
+print(supermarket.slots.sort())
