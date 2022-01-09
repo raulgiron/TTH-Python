@@ -1,0 +1,5 @@
+INSERT INTO CARS VALUES(2, 'Honda', 'Civic', 2014);
+INSERT INTO CARS VALUES(3, 'DeLorean', 'DMC-12', 1982);
+INSERT INTO CARS VALUES(4, 'Jeep', 'Cherokee', 2011);
+INSERT INTO CARS VALUES(5, 'Tesla', 'Model X', 2017);
+INSERT INTO CARS VALUES(6, 'Toyota', 'Prius', 2015);
